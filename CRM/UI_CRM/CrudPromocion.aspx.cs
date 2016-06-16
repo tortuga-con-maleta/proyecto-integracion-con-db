@@ -13,5 +13,10 @@ namespace UI_CRM
         {
 
         }
+
+        protected void fvPerfilCliente_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        {
+            gvPerfilCliente.DataBind();
+        }
     }
 }
