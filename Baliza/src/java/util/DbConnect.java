@@ -16,7 +16,7 @@ import javax.persistence.Query;
  */
 public class DbConnect {
     private static EntityManagerFactory emf = Persistence.
-            createEntityManagerFactory("JPAPU");
+            createEntityManagerFactory("BalizaPU");
 
     public static void insertar(Object obj) {
         EntityManager em = emf.createEntityManager();
