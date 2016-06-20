@@ -3,6 +3,7 @@ package controller;
 
 import baliza.Visita;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import util.DbConnect;
 
@@ -23,6 +24,9 @@ public class VisitaController {
     public VisitaController() {
         this.visita = new Visita();
         this.visitas = new ArrayList<Visita>();
+        List<Visita> result = (List<Visita>) DbConnect.buscarPorQuery("Visita.findAll", null);
+        this.visitas = result;
+        
     }
 
     public void guardarPersonaEnDb() {
