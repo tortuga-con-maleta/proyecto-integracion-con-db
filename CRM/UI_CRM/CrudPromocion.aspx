@@ -64,6 +64,19 @@
                 <br />
                 <asp:Button ID="btn_getVisitas" runat="server" OnClick="btn_getVisitas_Click" Text="getVisitas" />
                 <br />
+                <asp:Button ID="btn_getVisitasPorIdCliente" runat="server" OnClick="btn_getVisitasPorIdCliente_Click" Text="getVisitasPorIdCliente" />
+                &nbsp;idCliente:<asp:TextBox ID="txt_idCliente" runat="server" TextMode="Number"></asp:TextBox>
+                <br />
+                <asp:Button ID="btn_insertarZona" runat="server" OnClick="btn_insertarZona_Click" Text="insertarZona" />
+                &nbsp;nombreNuevaZona:
+                <asp:TextBox ID="txt_nombreZona" runat="server"></asp:TextBox>
+                <br />
+                <asp:Button ID="btn_enviarMensajeCliente" runat="server" OnClick="btn_enviarMensajeCliente_Click" Text="enviarMensajeCliente" />
+                idCliente:
+                <asp:TextBox ID="txt_idCliente2" runat="server" TextMode="Number"></asp:TextBox>
+                mensajeCliente:<asp:TextBox ID="txt_mensajeCliente" runat="server"></asp:TextBox>
+                <br />
+                <br />
                 <br />
             </ContentTemplate>
         </asp:UpdatePanel>
