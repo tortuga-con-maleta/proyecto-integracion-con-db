@@ -5,8 +5,10 @@
  */
 package ws;
 
-import baliza.Visita;
+import baliza.*;
 import controller.VisitaController;
+import controller.ZonaController;
+import estimote.EstimoteApi;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,11 +55,26 @@ public class BalizaWS {
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "operation")
-    public Boolean operation(@WebParam(name = "nombreZona") final String nombreZona) {
-        //TODO write your implementation code here:
-        return null;
+    @WebMethod(operationName = "insertarZona")
+    public boolean operation(@WebParam(name = "nombreZona") final String nombreZona) {
+        Zona zona = new Zona();
+        zona.setNombreZona(nombreZona);
+        ZonaController zonaController = new ZonaController();
+        zonaController.setZona(zona);
+        boolean result = zonaController.insertZona();
+        return result;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "enviarMensajeCliente")
+    public boolean enviarMensajeCliente(@WebParam(name = "idCliente") final int idCliente, @WebParam(name = "mensaje") final String mensaje) {
+        boolean result = EstimoteApi.enviarMensajeCliente(idCliente, mensaje);
+        return result;
+    }
+    
+    
     
     
 }
