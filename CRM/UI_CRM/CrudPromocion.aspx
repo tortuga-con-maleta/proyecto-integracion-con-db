@@ -9,10 +9,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:EntityDataSource ID="promocionDS" runat="server" ConnectionString="name=CRMEntities" DefaultContainerName="CRMEntities" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="promocion"></asp:EntityDataSource>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        <asp:EntityDataSource ID="perfilDS" runat="server" ConnectionString="name=CRMEntities" DefaultContainerName="CRMEntities" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="perfil_cliente">
+        <asp:EntityDataSource ID="perfilDS" runat="server" ConnectionString="name=CRMEntities1" DefaultContainerName="CRMEntities1" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="perfil_cliente">
         </asp:EntityDataSource>
         <br />
         <h1>Bienvenido!</h1>
@@ -44,23 +43,14 @@
                     </EditItemTemplate>
                     <InsertItemTemplate>
                         nombre:
-                        <asp:TextBox ID="nombreTextBox0" runat="server" Text='<%# Bind("nombre") %>' />
+                        <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' />
                         <br />
                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
                         &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        id_perfil_cliente:
-                        <asp:Label ID="id_perfil_clienteLabel" runat="server" Text='<%# Eval("id_perfil_cliente") %>' />
-                        <br />
                         nombre:
                         <asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' />
-                        <br />
-                        cliente:
-                        <asp:Label ID="clienteLabel" runat="server" Text='<%# Bind("cliente") %>' />
-                        <br />
-                        promocion:
-                        <asp:Label ID="promocionLabel" runat="server" Text='<%# Bind("promocion") %>' />
                         <br />
                         <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
                         &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />

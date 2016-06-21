@@ -43,7 +43,7 @@ namespace ESB
         }
 
         [WebMethod]
-        public bool getVisitasPorIdCliente(int idCliente, string mensaje)
+        public bool enviarMensajeCliente(int idCliente, string mensaje)
         {
             BalizaWSClient balizaWsClient = new BalizaWSClient();
             bool result = balizaWsClient.enviarMensajeCliente(idCliente, mensaje);

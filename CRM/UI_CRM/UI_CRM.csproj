@@ -68,22 +68,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cliente.cs">
-      <DependentUpon>CRM.tt</DependentUpon>
+      <DependentUpon>CRM_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRM.Context.cs">
+    <Compile Include="CRM_MODEL.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CRM.Context.tt</DependentUpon>
+      <DependentUpon>CRM_MODEL.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRM.cs">
+    <Compile Include="CRM_MODEL.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CRM.tt</DependentUpon>
+      <DependentUpon>CRM_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="CRM.Designer.cs">
+    <Compile Include="CRM_MODEL.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CRM.edmx</DependentUpon>
+      <DependentUpon>CRM_MODEL.edmx</DependentUpon>
     </Compile>
     <Compile Include="CrudPromocion.aspx.cs">
       <DependentUpon>CrudPromocion.aspx</DependentUpon>
@@ -93,38 +93,35 @@
       <DependentUpon>CrudPromocion.aspx</DependentUpon>
     </Compile>
     <Compile Include="departamento.cs">
-      <DependentUpon>CRM.tt</DependentUpon>
+      <DependentUpon>CRM_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="perfil_cliente.cs">
-      <DependentUpon>CRM.tt</DependentUpon>
+      <DependentUpon>CRM_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="promocion.cs">
-      <DependentUpon>CRM.tt</DependentUpon>
+      <DependentUpon>CRM_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>CRM.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="CRM.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CRM.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="CRM.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CRM.edmx</DependentUpon>
-      <LastGenOutput>CRM.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="CRM.edmx.diagram">
-      <DependentUpon>CRM.edmx</DependentUpon>
-    </Content>
-    <Content Include="CRM.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CRM.edmx</DependentUpon>
-      <LastGenOutput>CRM.cs</LastGenOutput>
-    </Content>
     <Content Include="packages.config" />
+    <EntityDeploy Include="CRM_MODEL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CRM_MODEL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="CRM_MODEL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CRM_MODEL.edmx</DependentUpon>
+      <LastGenOutput>CRM_MODEL.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CRM_MODEL.edmx.diagram">
+      <DependentUpon>CRM_MODEL.edmx</DependentUpon>
+    </Content>
+    <Content Include="CRM_MODEL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CRM_MODEL.edmx</DependentUpon>
+      <LastGenOutput>CRM_MODEL.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

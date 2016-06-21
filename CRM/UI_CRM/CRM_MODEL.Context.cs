@@ -13,10 +13,10 @@ namespace UI_CRM
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CRMEntities : DbContext
+    public partial class CRMEntities1 : DbContext
     {
-        public CRMEntities()
-            : base("name=CRMEntities")
+        public CRMEntities1()
+            : base("name=CRMEntities1")
         {
         }
     
@@ -29,6 +29,5 @@ namespace UI_CRM
         public DbSet<departamento> departamento { get; set; }
         public DbSet<perfil_cliente> perfil_cliente { get; set; }
         public DbSet<promocion> promocion { get; set; }
-        public DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }
