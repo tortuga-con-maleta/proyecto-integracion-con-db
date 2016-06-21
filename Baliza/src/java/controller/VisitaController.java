@@ -51,4 +51,16 @@ public class VisitaController {
     public void setVisitas(List<Visita> visitas) {
         this.visitas = visitas;
     }
+    
+    public List<Visita> getVisitasPorIdCliente(int idCliente){
+        ArrayList<Visita> visitasCliente = new ArrayList();
+        for(Visita visita : this.getVisitas()){
+            if(visita.getIdCliente() == idCliente){
+                visitasCliente.add(visita);
+            }
+        }
+        return visitasCliente;
+    }
+    
+    
 }
