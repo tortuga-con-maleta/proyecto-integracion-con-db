@@ -59,6 +59,12 @@
                 </asp:FormView>
                 <br />
                 <br />
+                Cuerpo mensaje recibido:
+                <asp:Label ID="lbl_mensaje" runat="server"></asp:Label>
+                <br />
+                <asp:Button ID="btn_getVisitas" runat="server" OnClick="btn_getVisitas_Click" Text="getVisitas" />
+                <br />
+                <br />
             </ContentTemplate>
         </asp:UpdatePanel>
         <br />
