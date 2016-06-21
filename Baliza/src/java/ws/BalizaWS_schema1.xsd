@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws/" xmlns:tns="http://ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="enviarMensajeCliente" type="tns:enviarMensajeCliente"/>
+
+  <xs:element name="enviarMensajeClienteResponse" type="tns:enviarMensajeClienteResponse"/>
+
+  <xs:element name="getFechaVisitas" type="tns:getFechaVisitas"/>
+
+  <xs:element name="getFechaVisitasResponse" type="tns:getFechaVisitasResponse"/>
+
+  <xs:element name="getVisitasPorIdCliente" type="tns:getVisitasPorIdCliente"/>
+
+  <xs:element name="getVisitasPorIdClienteResponse" type="tns:getVisitasPorIdClienteResponse"/>
+
+  <xs:element name="insertarZona" type="tns:insertarZona"/>
+
+  <xs:element name="insertarZonaResponse" type="tns:insertarZonaResponse"/>
+
+  <xs:complexType name="insertarZona">
+    <xs:sequence>
+      <xs:element name="nombreZona" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertarZonaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="enviarMensajeCliente">
+    <xs:sequence>
+      <xs:element name="idCliente" type="xs:int"/>
+      <xs:element name="mensaje" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="enviarMensajeClienteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFechaVisitas">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getFechaVisitasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVisitasPorIdCliente">
+    <xs:sequence>
+      <xs:element name="idCliente" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVisitasPorIdClienteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

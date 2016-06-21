@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getVisitas">
+        <s:complexType />
+      </s:element>
+      <s:element name="getVisitasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVisitasResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVisitasPorIdCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCliente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getVisitasPorIdClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVisitasPorIdClienteResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertarZona">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombreZona" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertarZonaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertarZonaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="enviarMensajeCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCliente" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="enviarMensajeClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="enviarMensajeClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getVisitasSoapIn">
+    <wsdl:part name="parameters" element="tns:getVisitas" />
+  </wsdl:message>
+  <wsdl:message name="getVisitasSoapOut">
+    <wsdl:part name="parameters" element="tns:getVisitasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVisitasPorIdClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:getVisitasPorIdCliente" />
+  </wsdl:message>
+  <wsdl:message name="getVisitasPorIdClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:getVisitasPorIdClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertarZonaSoapIn">
+    <wsdl:part name="parameters" element="tns:insertarZona" />
+  </wsdl:message>
+  <wsdl:message name="insertarZonaSoapOut">
+    <wsdl:part name="parameters" element="tns:insertarZonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="enviarMensajeClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:enviarMensajeCliente" />
+  </wsdl:message>
+  <wsdl:message name="enviarMensajeClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:enviarMensajeClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ESBWSSoap">
+    <wsdl:operation name="getVisitas">
+      <wsdl:input message="tns:getVisitasSoapIn" />
+      <wsdl:output message="tns:getVisitasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVisitasPorIdCliente">
+      <wsdl:input message="tns:getVisitasPorIdClienteSoapIn" />
+      <wsdl:output message="tns:getVisitasPorIdClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarZona">
+      <wsdl:input message="tns:insertarZonaSoapIn" />
+      <wsdl:output message="tns:insertarZonaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensajeCliente">
+      <wsdl:input message="tns:enviarMensajeClienteSoapIn" />
+      <wsdl:output message="tns:enviarMensajeClienteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ESBWSSoap" type="tns:ESBWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getVisitas">
+      <soap:operation soapAction="http://tempuri.org/getVisitas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVisitasPorIdCliente">
+      <soap:operation soapAction="http://tempuri.org/getVisitasPorIdCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarZona">
+      <soap:operation soapAction="http://tempuri.org/insertarZona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensajeCliente">
+      <soap:operation soapAction="http://tempuri.org/enviarMensajeCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ESBWSSoap12" type="tns:ESBWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getVisitas">
+      <soap12:operation soapAction="http://tempuri.org/getVisitas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVisitasPorIdCliente">
+      <soap12:operation soapAction="http://tempuri.org/getVisitasPorIdCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarZona">
+      <soap12:operation soapAction="http://tempuri.org/insertarZona" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensajeCliente">
+      <soap12:operation soapAction="http://tempuri.org/enviarMensajeCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ESBWS">
+    <wsdl:port name="ESBWSSoap" binding="tns:ESBWSSoap">
+      <soap:address location="http://localhost:1525/ESBWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ESBWSSoap12" binding="tns:ESBWSSoap12">
+      <soap12:address location="http://localhost:1525/ESBWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -10,7 +10,6 @@
           <EntitySet Name="departamento" EntityType="CRMModel.Store.departamento" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="perfil_cliente" EntityType="CRMModel.Store.perfil_cliente" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="promocion" EntityType="CRMModel.Store.promocion" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="CRMModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_cliente_perfil_cliente" Association="CRMModel.Store.FK_cliente_perfil_cliente">
             <End Role="perfil_cliente" EntitySet="perfil_cliente" />
             <End Role="cliente" EntitySet="cliente" />
@@ -57,16 +56,6 @@
           <Property Name="fk_perfil_cliente" Type="int" />
           <Property Name="fk_departamento" Type="int" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <Association Name="FK_cliente_perfil_cliente">
           <End Role="perfil_cliente" Type="CRMModel.Store.perfil_cliente" Multiplicity="0..1" />
           <End Role="cliente" Type="CRMModel.Store.cliente" Multiplicity="*" />
@@ -108,12 +97,11 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CRMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="CRMEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="CRMEntities1" p1:LazyLoadingEnabled="true">
           <EntitySet Name="cliente" EntityType="CRMModel.cliente" />
           <EntitySet Name="departamento" EntityType="CRMModel.departamento" />
           <EntitySet Name="perfil_cliente" EntityType="CRMModel.perfil_cliente" />
           <EntitySet Name="promocion" EntityType="CRMModel.promocion" />
-          <EntitySet Name="sysdiagrams" EntityType="CRMModel.sysdiagrams" />
           <AssociationSet Name="FK_cliente_perfil_cliente" Association="CRMModel.FK_cliente_perfil_cliente">
             <End Role="perfil_cliente" EntitySet="perfil_cliente" />
             <End Role="cliente" EntitySet="cliente" />
@@ -166,16 +154,6 @@
           <NavigationProperty Name="departamento" Relationship="CRMModel.FK_promocion_departamento" FromRole="promocion" ToRole="departamento" />
           <NavigationProperty Name="perfil_cliente" Relationship="CRMModel.FK_promocion_perfil_cliente" FromRole="promocion" ToRole="perfil_cliente" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <Association Name="FK_cliente_perfil_cliente">
           <End Role="perfil_cliente" Type="CRMModel.perfil_cliente" Multiplicity="0..1" />
           <End Role="cliente" Type="CRMModel.cliente" Multiplicity="*" />
@@ -217,7 +195,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CRMModelStoreContainer" CdmEntityContainer="CRMEntities">
+        <EntityContainerMapping StorageEntityContainer="CRMModelStoreContainer" CdmEntityContainer="CRMEntities1">
           <EntitySetMapping Name="cliente">
             <EntityTypeMapping TypeName="CRMModel.cliente">
               <MappingFragment StoreEntitySet="cliente">
@@ -252,17 +230,6 @@
                 <ScalarProperty Name="texto" ColumnName="texto" />
                 <ScalarProperty Name="fk_perfil_cliente" ColumnName="fk_perfil_cliente" />
                 <ScalarProperty Name="fk_departamento" ColumnName="fk_departamento" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="CRMModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

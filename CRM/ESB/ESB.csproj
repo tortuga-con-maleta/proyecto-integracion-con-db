@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{31C109F6-7758-478F-85E7-6219E5E769C0}</ProjectGuid>
+    <ProjectGuid>{F8B1AC8C-6E00-4D1D-8E2B-6A0D7FB36547}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UI_CRM</RootNamespace>
-    <AssemblyName>UI_CRM</AssemblyName>
+    <RootNamespace>ESB</RootNamespace>
+    <AssemblyName>ESB</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -38,13 +38,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -64,92 +59,44 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CrudPromocion.aspx" />
-    <Content Include="Service References\ESB_WS\configuration91.svcinfo" />
-    <Content Include="Service References\ESB_WS\configuration.svcinfo" />
-    <Content Include="Service References\ESB_WS\Reference.svcmap">
+    <None Include="Service References\BalizaWs\configuration91.svcinfo" />
+    <None Include="Service References\BalizaWs\configuration.svcinfo" />
+    <Content Include="ESBWS.asmx" />
+    <Content Include="Service References\BalizaWs\ESB.BalizaWs.enviarMensajeClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\BalizaWs\ESB.BalizaWs.getFechaVisitasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\BalizaWs\ESB.BalizaWs.getVisitasPorIdClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\BalizaWs\ESB.BalizaWs.insertarZonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\BalizaWs\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cliente.cs">
-      <DependentUpon>CRM_MODEL.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CRM_MODEL.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRM_MODEL.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CRM_MODEL.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRM_MODEL.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CRM_MODEL.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRM_MODEL.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="CrudPromocion.aspx.cs">
-      <DependentUpon>CrudPromocion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CrudPromocion.aspx.designer.cs">
-      <DependentUpon>CrudPromocion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="departamento.cs">
-      <DependentUpon>CRM_MODEL.tt</DependentUpon>
-    </Compile>
-    <Compile Include="perfil_cliente.cs">
-      <DependentUpon>CRM_MODEL.tt</DependentUpon>
-    </Compile>
-    <Compile Include="promocion.cs">
-      <DependentUpon>CRM_MODEL.tt</DependentUpon>
+    <Compile Include="ESBWS.asmx.cs">
+      <DependentUpon>ESBWS.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\ESB_WS\Reference.cs">
+    <Compile Include="Service References\BalizaWs\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-    <EntityDeploy Include="CRM_MODEL.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CRM_MODEL.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="CRM_MODEL.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CRM_MODEL.edmx</DependentUpon>
-      <LastGenOutput>CRM_MODEL.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="CRM_MODEL.edmx.diagram">
-      <DependentUpon>CRM_MODEL.edmx</DependentUpon>
-    </Content>
-    <Content Include="CRM_MODEL.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CRM_MODEL.edmx</DependentUpon>
-      <LastGenOutput>CRM_MODEL.cs</LastGenOutput>
-    </Content>
-    <Content Include="Service References\ESB_WS\ESBWS.wsdl" />
-    <Content Include="Service References\ESB_WS\UI_CRM.ESB_WS.ArrayOfString.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ESB_WS\UI_CRM.ESB_WS.enviarMensajeClienteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ESB_WS\UI_CRM.ESB_WS.getVisitasPorIdClienteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ESB_WS\UI_CRM.ESB_WS.getVisitasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ESB_WS\UI_CRM.ESB_WS.insertarZonaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <None Include="Service References\BalizaWs\BalizaWS.wsdl" />
+    <None Include="Service References\BalizaWs\BalizaWS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -158,13 +105,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ESB_WS\" />
+    <WCFMetadataStorage Include="Service References\BalizaWs\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -181,7 +125,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1253/</IISUrl>
+          <IISUrl>http://localhost:1525/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

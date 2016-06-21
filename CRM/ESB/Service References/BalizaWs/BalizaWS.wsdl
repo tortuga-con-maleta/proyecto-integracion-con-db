@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="BalizaWS" targetNamespace="http://ws/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/Baliza/BalizaWS?xsd=1" namespace="http://ws/" />
+    </xsd:schema>
+  </types>
+  <message name="insertarZona">
+    <part name="parameters" element="tns:insertarZona" />
+  </message>
+  <message name="insertarZonaResponse">
+    <part name="parameters" element="tns:insertarZonaResponse" />
+  </message>
+  <message name="getFechaVisitas">
+    <part name="parameters" element="tns:getFechaVisitas" />
+  </message>
+  <message name="getFechaVisitasResponse">
+    <part name="parameters" element="tns:getFechaVisitasResponse" />
+  </message>
+  <message name="getVisitasPorIdCliente">
+    <part name="parameters" element="tns:getVisitasPorIdCliente" />
+  </message>
+  <message name="getVisitasPorIdClienteResponse">
+    <part name="parameters" element="tns:getVisitasPorIdClienteResponse" />
+  </message>
+  <message name="enviarMensajeCliente">
+    <part name="parameters" element="tns:enviarMensajeCliente" />
+  </message>
+  <message name="enviarMensajeClienteResponse">
+    <part name="parameters" element="tns:enviarMensajeClienteResponse" />
+  </message>
+  <portType name="BalizaWS">
+    <operation name="insertarZona">
+      <input wsam:Action="http://ws/BalizaWS/insertarZonaRequest" message="tns:insertarZona" />
+      <output wsam:Action="http://ws/BalizaWS/insertarZonaResponse" message="tns:insertarZonaResponse" />
+    </operation>
+    <operation name="getFechaVisitas">
+      <input wsam:Action="http://ws/BalizaWS/getFechaVisitasRequest" message="tns:getFechaVisitas" />
+      <output wsam:Action="http://ws/BalizaWS/getFechaVisitasResponse" message="tns:getFechaVisitasResponse" />
+    </operation>
+    <operation name="getVisitasPorIdCliente">
+      <input wsam:Action="http://ws/BalizaWS/getVisitasPorIdClienteRequest" message="tns:getVisitasPorIdCliente" />
+      <output wsam:Action="http://ws/BalizaWS/getVisitasPorIdClienteResponse" message="tns:getVisitasPorIdClienteResponse" />
+    </operation>
+    <operation name="enviarMensajeCliente">
+      <input wsam:Action="http://ws/BalizaWS/enviarMensajeClienteRequest" message="tns:enviarMensajeCliente" />
+      <output wsam:Action="http://ws/BalizaWS/enviarMensajeClienteResponse" message="tns:enviarMensajeClienteResponse" />
+    </operation>
+  </portType>
+  <binding name="BalizaWSPortBinding" type="tns:BalizaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarZona">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFechaVisitas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVisitasPorIdCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="enviarMensajeCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="BalizaWS">
+    <port name="BalizaWSPort" binding="tns:BalizaWSPortBinding">
+      <soap:address location="http://localhost:8080/Baliza/BalizaWS" />
+    </port>
+  </service>
+</definitions>

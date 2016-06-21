@@ -251,3 +251,5 @@ paket-files/
 .idea/
 *.sln.iml
 /Baliza/nbproject/private/
+/Baliza/build/
+/Baliza/dist/

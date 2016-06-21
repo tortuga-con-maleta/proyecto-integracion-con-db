@@ -9,10 +9,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:EntityDataSource ID="promocionDS" runat="server" ConnectionString="name=CRMEntities" DefaultContainerName="CRMEntities" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="promocion"></asp:EntityDataSource>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        <asp:EntityDataSource ID="perfilDS" runat="server" ConnectionString="name=CRMEntities" DefaultContainerName="CRMEntities" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="perfil_cliente">
+        <asp:EntityDataSource ID="perfilDS" runat="server" ConnectionString="name=CRMEntities1" DefaultContainerName="CRMEntities1" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="perfil_cliente">
         </asp:EntityDataSource>
         <br />
         <h1>Bienvenido!</h1>
@@ -44,29 +43,41 @@
                     </EditItemTemplate>
                     <InsertItemTemplate>
                         nombre:
-                        <asp:TextBox ID="nombreTextBox0" runat="server" Text='<%# Bind("nombre") %>' />
+                        <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' />
                         <br />
                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
                         &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        id_perfil_cliente:
-                        <asp:Label ID="id_perfil_clienteLabel" runat="server" Text='<%# Eval("id_perfil_cliente") %>' />
-                        <br />
                         nombre:
                         <asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' />
-                        <br />
-                        cliente:
-                        <asp:Label ID="clienteLabel" runat="server" Text='<%# Bind("cliente") %>' />
-                        <br />
-                        promocion:
-                        <asp:Label ID="promocionLabel" runat="server" Text='<%# Bind("promocion") %>' />
                         <br />
                         <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
                         &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
                         &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
                     </ItemTemplate>
                 </asp:FormView>
+                <br />
+                <br />
+                Cuerpo mensaje recibido:
+                <asp:Label ID="lbl_mensaje" runat="server"></asp:Label>
+                <br />
+                <asp:Button ID="btn_getVisitas" runat="server" OnClick="btn_getVisitas_Click" Text="getVisitas" />
+                <br />
+                <asp:Button ID="btn_getVisitasPorIdCliente" runat="server" OnClick="btn_getVisitasPorIdCliente_Click" Text="getVisitasPorIdCliente" />
+                &nbsp;idCliente:<asp:TextBox ID="txt_idCliente" runat="server" TextMode="Number"></asp:TextBox>
+                <br />
+                <asp:Button ID="btn_insertarZona" runat="server" OnClick="btn_insertarZona_Click" Text="insertarZona" />
+                &nbsp;nombreNuevaZona:
+                <asp:TextBox ID="txt_nombreZona" runat="server"></asp:TextBox>
+                <br />
+                <asp:Button ID="btn_enviarMensajeCliente" runat="server" OnClick="btn_enviarMensajeCliente_Click" Text="enviarMensajeCliente" />
+                idCliente:
+                <asp:TextBox ID="txt_idCliente2" runat="server" TextMode="Number"></asp:TextBox>
+                mensajeCliente:<asp:TextBox ID="txt_mensajeCliente" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                <br />
             </ContentTemplate>
         </asp:UpdatePanel>
         <br />
