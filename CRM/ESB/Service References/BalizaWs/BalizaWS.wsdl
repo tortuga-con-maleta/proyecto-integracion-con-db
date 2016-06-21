@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="BalizaWS" targetNamespace="http://ws/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/Baliza/BalizaWS?xsd=1" namespace="http://ws/" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/Baliza/BalizaWS?xsd=2" namespace="http://jaxb.dev.java.net/array" />
+    </xsd:schema>
+  </types>
+  <message name="getVisitas">
+    <part name="parameters" element="tns:getVisitas" />
+  </message>
+  <message name="getVisitasResponse">
+    <part name="parameters" element="tns:getVisitasResponse" />
+  </message>
+  <portType name="BalizaWS">
+    <operation name="getVisitas">
+      <input wsam:Action="http://ws/BalizaWS/getVisitasRequest" message="tns:getVisitas" />
+      <output wsam:Action="http://ws/BalizaWS/getVisitasResponse" message="tns:getVisitasResponse" />
+    </operation>
+  </portType>
+  <binding name="BalizaWSPortBinding" type="tns:BalizaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getVisitas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="BalizaWS">
+    <port name="BalizaWSPort" binding="tns:BalizaWSPortBinding">
+      <soap:address location="http://localhost:8080/Baliza/BalizaWS" />
+    </port>
+  </service>
+</definitions>

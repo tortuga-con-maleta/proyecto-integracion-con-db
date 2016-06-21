@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws/" xmlns:ns1="http://jaxb.dev.java.net/array" targetNamespace="http://ws/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/Baliza/BalizaWS?xsd=2" namespace="http://jaxb.dev.java.net/array" />
+  <xs:element name="getVisitas" type="tns:getVisitas" />
+  <xs:element name="getVisitasResponse" type="tns:getVisitasResponse" />
+  <xs:complexType name="getVisitas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getVisitasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:stringArray" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
