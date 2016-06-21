@@ -22,7 +22,6 @@
     <MetadataSource Address="http://localhost:8080/Baliza/BalizaWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BalizaWS.xsd" MetadataType="Schema" ID="396f7813-6a08-4160-b273-69e99cd85ecb" SourceId="1" SourceUrl="http://localhost:8080/Baliza/BalizaWS?xsd=2" />
     <MetadataFile FileName="BalizaWS1.xsd" MetadataType="Schema" ID="3a763e86-f583-4f87-af30-f4087b1771b4" SourceId="1" SourceUrl="http://localhost:8080/Baliza/BalizaWS?xsd=1" />
     <MetadataFile FileName="BalizaWS.wsdl" MetadataType="Wsdl" ID="09a9bd32-cb03-4456-95c3-b9d5d95fe340" SourceId="1" SourceUrl="http://localhost:8080/Baliza/BalizaWS?WSDL" />
   </Metadata>

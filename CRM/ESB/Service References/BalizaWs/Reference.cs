@@ -16,71 +16,179 @@ namespace ESB.BalizaWs {
     public interface BalizaWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/getVisitasRequest", ReplyAction="http://ws/BalizaWS/getVisitasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/insertarZonaRequest", ReplyAction="http://ws/BalizaWS/insertarZonaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        ESB.BalizaWs.getVisitasResponse getVisitas(ESB.BalizaWs.getVisitasRequest request);
+        ESB.BalizaWs.insertarZonaResponse insertarZona(ESB.BalizaWs.insertarZonaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/getVisitasRequest", ReplyAction="http://ws/BalizaWS/getVisitasResponse")]
-        System.Threading.Tasks.Task<ESB.BalizaWs.getVisitasResponse> getVisitasAsync(ESB.BalizaWs.getVisitasRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/insertarZonaRequest", ReplyAction="http://ws/BalizaWS/insertarZonaResponse")]
+        System.Threading.Tasks.Task<ESB.BalizaWs.insertarZonaResponse> insertarZonaAsync(ESB.BalizaWs.insertarZonaRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/getFechaVisitasRequest", ReplyAction="http://ws/BalizaWS/getFechaVisitasResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ESB.BalizaWs.getFechaVisitasResponse getFechaVisitas(ESB.BalizaWs.getFechaVisitasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/getFechaVisitasRequest", ReplyAction="http://ws/BalizaWS/getFechaVisitasResponse")]
+        System.Threading.Tasks.Task<ESB.BalizaWs.getFechaVisitasResponse> getFechaVisitasAsync(ESB.BalizaWs.getFechaVisitasRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/getVisitasPorIdClienteRequest", ReplyAction="http://ws/BalizaWS/getVisitasPorIdClienteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ESB.BalizaWs.getVisitasPorIdClienteResponse getVisitasPorIdCliente(ESB.BalizaWs.getVisitasPorIdClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/getVisitasPorIdClienteRequest", ReplyAction="http://ws/BalizaWS/getVisitasPorIdClienteResponse")]
+        System.Threading.Tasks.Task<ESB.BalizaWs.getVisitasPorIdClienteResponse> getVisitasPorIdClienteAsync(ESB.BalizaWs.getVisitasPorIdClienteRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/enviarMensajeClienteRequest", ReplyAction="http://ws/BalizaWS/enviarMensajeClienteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ESB.BalizaWs.enviarMensajeClienteResponse enviarMensajeCliente(ESB.BalizaWs.enviarMensajeClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/enviarMensajeClienteRequest", ReplyAction="http://ws/BalizaWS/enviarMensajeClienteResponse")]
+        System.Threading.Tasks.Task<ESB.BalizaWs.enviarMensajeClienteResponse> enviarMensajeClienteAsync(ESB.BalizaWs.enviarMensajeClienteRequest request);
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34209")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jaxb.dev.java.net/array")]
-    public partial class stringArray : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarZona", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class insertarZonaRequest {
         
-        private string[] itemField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombreZona;
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public string[] item {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-                this.RaisePropertyChanged("item");
-            }
+        public insertarZonaRequest() {
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public insertarZonaRequest(string nombreZona) {
+            this.nombreZona = nombreZona;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getVisitas", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class getVisitasRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarZonaResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class insertarZonaResponse {
         
-        public getVisitasRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public insertarZonaResponse() {
+        }
+        
+        public insertarZonaResponse(bool @return) {
+            this.@return = @return;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getVisitasResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class getVisitasResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getFechaVisitas", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class getFechaVisitasRequest {
+        
+        public getFechaVisitasRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getFechaVisitasResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class getFechaVisitasResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ESB.BalizaWs.stringArray[] @return;
+        public string[] @return;
         
-        public getVisitasResponse() {
+        public getFechaVisitasResponse() {
         }
         
-        public getVisitasResponse(ESB.BalizaWs.stringArray[] @return) {
+        public getFechaVisitasResponse(string[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVisitasPorIdCliente", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class getVisitasPorIdClienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idCliente;
+        
+        public getVisitasPorIdClienteRequest() {
+        }
+        
+        public getVisitasPorIdClienteRequest(int idCliente) {
+            this.idCliente = idCliente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVisitasPorIdClienteResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class getVisitasPorIdClienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string[] @return;
+        
+        public getVisitasPorIdClienteResponse() {
+        }
+        
+        public getVisitasPorIdClienteResponse(string[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="enviarMensajeCliente", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class enviarMensajeClienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idCliente;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string mensaje;
+        
+        public enviarMensajeClienteRequest() {
+        }
+        
+        public enviarMensajeClienteRequest(int idCliente, string mensaje) {
+            this.idCliente = idCliente;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="enviarMensajeClienteResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class enviarMensajeClienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public enviarMensajeClienteResponse() {
+        }
+        
+        public enviarMensajeClienteResponse(bool @return) {
             this.@return = @return;
         }
     }
@@ -113,24 +221,95 @@ namespace ESB.BalizaWs {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ESB.BalizaWs.getVisitasResponse ESB.BalizaWs.BalizaWS.getVisitas(ESB.BalizaWs.getVisitasRequest request) {
-            return base.Channel.getVisitas(request);
+        ESB.BalizaWs.insertarZonaResponse ESB.BalizaWs.BalizaWS.insertarZona(ESB.BalizaWs.insertarZonaRequest request) {
+            return base.Channel.insertarZona(request);
         }
         
-        public ESB.BalizaWs.stringArray[] getVisitas() {
-            ESB.BalizaWs.getVisitasRequest inValue = new ESB.BalizaWs.getVisitasRequest();
-            ESB.BalizaWs.getVisitasResponse retVal = ((ESB.BalizaWs.BalizaWS)(this)).getVisitas(inValue);
+        public bool insertarZona(string nombreZona) {
+            ESB.BalizaWs.insertarZonaRequest inValue = new ESB.BalizaWs.insertarZonaRequest();
+            inValue.nombreZona = nombreZona;
+            ESB.BalizaWs.insertarZonaResponse retVal = ((ESB.BalizaWs.BalizaWS)(this)).insertarZona(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ESB.BalizaWs.getVisitasResponse> ESB.BalizaWs.BalizaWS.getVisitasAsync(ESB.BalizaWs.getVisitasRequest request) {
-            return base.Channel.getVisitasAsync(request);
+        System.Threading.Tasks.Task<ESB.BalizaWs.insertarZonaResponse> ESB.BalizaWs.BalizaWS.insertarZonaAsync(ESB.BalizaWs.insertarZonaRequest request) {
+            return base.Channel.insertarZonaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ESB.BalizaWs.getVisitasResponse> getVisitasAsync() {
-            ESB.BalizaWs.getVisitasRequest inValue = new ESB.BalizaWs.getVisitasRequest();
-            return ((ESB.BalizaWs.BalizaWS)(this)).getVisitasAsync(inValue);
+        public System.Threading.Tasks.Task<ESB.BalizaWs.insertarZonaResponse> insertarZonaAsync(string nombreZona) {
+            ESB.BalizaWs.insertarZonaRequest inValue = new ESB.BalizaWs.insertarZonaRequest();
+            inValue.nombreZona = nombreZona;
+            return ((ESB.BalizaWs.BalizaWS)(this)).insertarZonaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ESB.BalizaWs.getFechaVisitasResponse ESB.BalizaWs.BalizaWS.getFechaVisitas(ESB.BalizaWs.getFechaVisitasRequest request) {
+            return base.Channel.getFechaVisitas(request);
+        }
+        
+        public string[] getFechaVisitas() {
+            ESB.BalizaWs.getFechaVisitasRequest inValue = new ESB.BalizaWs.getFechaVisitasRequest();
+            ESB.BalizaWs.getFechaVisitasResponse retVal = ((ESB.BalizaWs.BalizaWS)(this)).getFechaVisitas(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ESB.BalizaWs.getFechaVisitasResponse> ESB.BalizaWs.BalizaWS.getFechaVisitasAsync(ESB.BalizaWs.getFechaVisitasRequest request) {
+            return base.Channel.getFechaVisitasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ESB.BalizaWs.getFechaVisitasResponse> getFechaVisitasAsync() {
+            ESB.BalizaWs.getFechaVisitasRequest inValue = new ESB.BalizaWs.getFechaVisitasRequest();
+            return ((ESB.BalizaWs.BalizaWS)(this)).getFechaVisitasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ESB.BalizaWs.getVisitasPorIdClienteResponse ESB.BalizaWs.BalizaWS.getVisitasPorIdCliente(ESB.BalizaWs.getVisitasPorIdClienteRequest request) {
+            return base.Channel.getVisitasPorIdCliente(request);
+        }
+        
+        public string[] getVisitasPorIdCliente(int idCliente) {
+            ESB.BalizaWs.getVisitasPorIdClienteRequest inValue = new ESB.BalizaWs.getVisitasPorIdClienteRequest();
+            inValue.idCliente = idCliente;
+            ESB.BalizaWs.getVisitasPorIdClienteResponse retVal = ((ESB.BalizaWs.BalizaWS)(this)).getVisitasPorIdCliente(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ESB.BalizaWs.getVisitasPorIdClienteResponse> ESB.BalizaWs.BalizaWS.getVisitasPorIdClienteAsync(ESB.BalizaWs.getVisitasPorIdClienteRequest request) {
+            return base.Channel.getVisitasPorIdClienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ESB.BalizaWs.getVisitasPorIdClienteResponse> getVisitasPorIdClienteAsync(int idCliente) {
+            ESB.BalizaWs.getVisitasPorIdClienteRequest inValue = new ESB.BalizaWs.getVisitasPorIdClienteRequest();
+            inValue.idCliente = idCliente;
+            return ((ESB.BalizaWs.BalizaWS)(this)).getVisitasPorIdClienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ESB.BalizaWs.enviarMensajeClienteResponse ESB.BalizaWs.BalizaWS.enviarMensajeCliente(ESB.BalizaWs.enviarMensajeClienteRequest request) {
+            return base.Channel.enviarMensajeCliente(request);
+        }
+        
+        public bool enviarMensajeCliente(int idCliente, string mensaje) {
+            ESB.BalizaWs.enviarMensajeClienteRequest inValue = new ESB.BalizaWs.enviarMensajeClienteRequest();
+            inValue.idCliente = idCliente;
+            inValue.mensaje = mensaje;
+            ESB.BalizaWs.enviarMensajeClienteResponse retVal = ((ESB.BalizaWs.BalizaWS)(this)).enviarMensajeCliente(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ESB.BalizaWs.enviarMensajeClienteResponse> ESB.BalizaWs.BalizaWS.enviarMensajeClienteAsync(ESB.BalizaWs.enviarMensajeClienteRequest request) {
+            return base.Channel.enviarMensajeClienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ESB.BalizaWs.enviarMensajeClienteResponse> enviarMensajeClienteAsync(int idCliente, string mensaje) {
+            ESB.BalizaWs.enviarMensajeClienteRequest inValue = new ESB.BalizaWs.enviarMensajeClienteRequest();
+            inValue.idCliente = idCliente;
+            inValue.mensaje = mensaje;
+            return ((ESB.BalizaWs.BalizaWS)(this)).enviarMensajeClienteAsync(inValue);
         }
     }
 }

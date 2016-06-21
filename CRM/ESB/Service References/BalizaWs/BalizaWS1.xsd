@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://ws/" xmlns:ns1="http://jaxb.dev.java.net/array" targetNamespace="http://ws/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8080/Baliza/BalizaWS?xsd=2" namespace="http://jaxb.dev.java.net/array" />
-  <xs:element name="getVisitas" type="tns:getVisitas" />
-  <xs:element name="getVisitasResponse" type="tns:getVisitasResponse" />
-  <xs:complexType name="getVisitas">
+<xs:schema xmlns:tns="http://ws/" targetNamespace="http://ws/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="enviarMensajeCliente" type="tns:enviarMensajeCliente" />
+  <xs:element name="enviarMensajeClienteResponse" type="tns:enviarMensajeClienteResponse" />
+  <xs:element name="getFechaVisitas" type="tns:getFechaVisitas" />
+  <xs:element name="getFechaVisitasResponse" type="tns:getFechaVisitasResponse" />
+  <xs:element name="getVisitasPorIdCliente" type="tns:getVisitasPorIdCliente" />
+  <xs:element name="getVisitasPorIdClienteResponse" type="tns:getVisitasPorIdClienteResponse" />
+  <xs:element name="insertarZona" type="tns:insertarZona" />
+  <xs:element name="insertarZonaResponse" type="tns:insertarZonaResponse" />
+  <xs:complexType name="insertarZona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombreZona" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarZonaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enviarMensajeCliente">
+    <xs:sequence>
+      <xs:element name="idCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="mensaje" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enviarMensajeClienteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFechaVisitas">
     <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="getVisitasResponse">
+  <xs:complexType name="getFechaVisitasResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:stringArray" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVisitasPorIdCliente">
+    <xs:sequence>
+      <xs:element name="idCliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVisitasPorIdClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
