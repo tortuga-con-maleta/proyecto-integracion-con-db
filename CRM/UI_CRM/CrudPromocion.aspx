@@ -57,6 +57,8 @@
                         &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
                     </ItemTemplate>
                 </asp:FormView>
+                <br />
+                <br />
             </ContentTemplate>
         </asp:UpdatePanel>
         <br />
