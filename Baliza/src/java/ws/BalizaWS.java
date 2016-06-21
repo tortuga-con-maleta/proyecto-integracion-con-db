@@ -26,14 +26,12 @@ public class BalizaWS {
      */
     
 //    public String[] getVisitas() {
-    @WebMethod(operationName = "getVisitas")
-    public List<String[]> getVisitas(){
+    @WebMethod(operationName = "getFechaVisitas")
+    public List<String> getFechaVisitas(){
         VisitaController visitaController = new VisitaController();
-        List<String[]> mensajes = new ArrayList<>();
+        List<String> mensajes = new ArrayList<>();
         for(Visita visita : visitaController.getVisitas()){
-            String[] mensaje = new String[2];
-            mensaje[0] = visita.getFecha().toString();
-            mensaje[1] = String.valueOf(visita.getIdCliente());
+            String mensaje = visita.getFecha().toString();
             mensajes.add(mensaje);
         }
         return mensajes;

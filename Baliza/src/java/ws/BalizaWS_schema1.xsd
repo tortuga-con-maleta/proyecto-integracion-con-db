@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema version="1.0" targetNamespace="http://ws/" xmlns:tns="http://ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://jaxb.dev.java.net/array">
+<xs:schema version="1.0" targetNamespace="http://ws/" xmlns:tns="http://ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:import namespace="http://jaxb.dev.java.net/array" schemaLocation="BalizaWS_schema2.xsd"/>
+  <xs:element name="getFechaVisitas" type="tns:getFechaVisitas"/>
 
-  <xs:element name="getVisitas" nillable="true" type="tns:getVisitas"/>
+  <xs:element name="getFechaVisitasResponse" type="tns:getFechaVisitasResponse"/>
 
-  <xs:element name="getVisitasResponse" nillable="true" type="tns:getVisitasResponse"/>
-
-  <xs:complexType name="getVisitas">
+  <xs:complexType name="getFechaVisitas">
     <xs:sequence/>
   </xs:complexType>
 
-  <xs:complexType name="getVisitasResponse">
+  <xs:complexType name="getFechaVisitasResponse">
     <xs:sequence>
-      <xs:element name="return" type="ns1:stringArray" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

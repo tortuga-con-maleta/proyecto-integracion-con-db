@@ -5,25 +5,22 @@
     <xsd:schema>
       <xsd:import namespace="http://ws/" schemaLocation="BalizaWS_schema1.xsd"/>
     </xsd:schema>
-    <xsd:schema>
-      <xsd:import namespace="http://jaxb.dev.java.net/array" schemaLocation="BalizaWS_schema2.xsd"/>
-    </xsd:schema>
   </types>
-  <message name="getVisitas">
-    <part name="parameters" element="tns:getVisitas"/>
+  <message name="getFechaVisitas">
+    <part name="parameters" element="tns:getFechaVisitas"/>
   </message>
-  <message name="getVisitasResponse">
-    <part name="parameters" element="tns:getVisitasResponse"/>
+  <message name="getFechaVisitasResponse">
+    <part name="parameters" element="tns:getFechaVisitasResponse"/>
   </message>
   <portType name="BalizaWS">
-    <operation name="getVisitas">
-      <input wsam:Action="http://ws/BalizaWS/getVisitasRequest" message="tns:getVisitas"/>
-      <output wsam:Action="http://ws/BalizaWS/getVisitasResponse" message="tns:getVisitasResponse"/>
+    <operation name="getFechaVisitas">
+      <input wsam:Action="http://ws/BalizaWS/getFechaVisitasRequest" message="tns:getFechaVisitas"/>
+      <output wsam:Action="http://ws/BalizaWS/getFechaVisitasResponse" message="tns:getFechaVisitasResponse"/>
     </operation>
   </portType>
   <binding name="BalizaWSPortBinding" type="tns:BalizaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-    <operation name="getVisitas">
+    <operation name="getFechaVisitas">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
