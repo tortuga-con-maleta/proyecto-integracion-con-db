@@ -5,7 +5,11 @@
  */
 package ws;
 
+import baliza.Visita;
 import controller.VisitaController;
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -20,11 +24,18 @@ public class BalizaWS {
     /**
      * This is a sample web service operation
      */
+    
+//    public String[] getVisitas() {
     @WebMethod(operationName = "getVisitas")
-    public String getVisitas() {
+    public List<String[]> getVisitas(){
         VisitaController visitaController = new VisitaController();
-        visitaController.getVisitas();
-        System.out.println(visitaController.getVisitas().toString());
-        return "Hello " + " !";
+        List<String[]> mensajes = new ArrayList<>();
+        for(Visita visita : visitaController.getVisitas()){
+            String[] mensaje = new String[2];
+            mensaje[0] = visita.getFecha().toString();
+            mensaje[1] = String.valueOf(visita.getIdCliente());
+            mensajes.add(mensaje);
+        }
+        return mensajes;
     }
 }
