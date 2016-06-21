@@ -69,7 +69,7 @@ namespace UI_CRM
         protected void btn_enviarMensajeCliente_Click(object sender, EventArgs e)
         {
             int idCliente = int.Parse(txt_idCliente2.Text);
-            string mensajeCliente = txt_nombreZona.Text;
+            string mensajeCliente = txt_mensajeCliente.Text;
             ESBWSSoapClient esbWSSoapClient = new ESBWSSoapClient();
             bool insercionTuvoExito = esbWSSoapClient.enviarMensajeCliente(idCliente, mensajeCliente);
             string mensaje = String.Empty;

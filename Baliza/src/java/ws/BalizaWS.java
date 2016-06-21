@@ -71,6 +71,7 @@ public class BalizaWS {
     @WebMethod(operationName = "enviarMensajeCliente")
     public boolean enviarMensajeCliente(@WebParam(name = "idCliente") final int idCliente, @WebParam(name = "mensaje") final String mensaje) {
         boolean result = EstimoteApi.enviarMensajeCliente(idCliente, mensaje);
+        System.out.println("El mensaje es " + mensaje);
         return result;
     }
     
