@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using ESB.BalizaWs;
 
 namespace ESB
 {
@@ -18,9 +19,35 @@ namespace ESB
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public string[] getVisitas()
         {
-            return "Hello World";
+            BalizaWSClient balizaWsClient = new BalizaWSClient();
+            string [] mensaje = balizaWsClient.getFechaVisitas();
+            return mensaje;
+        }
+
+        [WebMethod]
+        public string[] getVisitasPorIdCliente(int idCliente)
+        {
+            BalizaWSClient balizaWsClient = new BalizaWSClient();
+            string[] mensaje = balizaWsClient.getVisitasPorIdCliente(idCliente);
+            return mensaje;
+        }
+
+        [WebMethod]
+        public bool insertarZona(string nombreZona)
+        {
+            BalizaWSClient balizaWsClient = new BalizaWSClient();
+            bool result = balizaWsClient.insertarZona(nombreZona);
+            return result;
+        }
+
+        [WebMethod]
+        public bool getVisitasPorIdCliente(int idCliente, string mensaje)
+        {
+            BalizaWSClient balizaWsClient = new BalizaWSClient();
+            bool result = balizaWsClient.enviarMensajeCliente(idCliente, mensaje);
+            return result;
         }
     }
 }

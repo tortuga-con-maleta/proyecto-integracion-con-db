@@ -59,21 +59,32 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service References\BalizaWs\configuration91.svcinfo" />
-    <Content Include="Service References\BalizaWs\configuration.svcinfo" />
-    <Content Include="Service References\BalizaWs\ESB.BalizaWs.getVisitasResponse.datasource">
+    <None Include="Service References\BalizaWs\configuration91.svcinfo" />
+    <None Include="Service References\BalizaWs\configuration.svcinfo" />
+    <Content Include="ESBWS.asmx" />
+    <Content Include="Service References\BalizaWs\ESB.BalizaWs.enviarMensajeClienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\BalizaWs\ESB.BalizaWs.stringArray.datasource">
+    <Content Include="Service References\BalizaWs\ESB.BalizaWs.getFechaVisitasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\BalizaWs\Reference.svcmap">
+    <Content Include="Service References\BalizaWs\ESB.BalizaWs.getVisitasPorIdClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\BalizaWs\ESB.BalizaWs.insertarZonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\BalizaWs\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ESBWS.asmx.cs">
+      <DependentUpon>ESBWS.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\BalizaWs\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -82,10 +93,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service References\BalizaWs\BalizaWS.wsdl" />
-    <None Include="Service References\BalizaWs\BalizaWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Service References\BalizaWs\BalizaWS.wsdl" />
     <None Include="Service References\BalizaWs\BalizaWS1.xsd">
       <SubType>Designer</SubType>
     </None>
