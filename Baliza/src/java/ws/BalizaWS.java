@@ -36,4 +36,28 @@ public class BalizaWS {
         }
         return mensajes;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getVisitasPorIdCliente")
+    public List<String> getVisitasPorIdCliente(@WebParam(name = "idCliente") final int idCliente) {
+        VisitaController visitaController = new VisitaController();
+        List<String> mensaje = new ArrayList<>();
+        for(Visita visita: visitaController.getVisitasPorIdCliente(idCliente)){
+            mensaje.add(visita.getFecha().toString());
+        }
+        return mensaje;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "operation")
+    public Boolean operation(@WebParam(name = "nombreZona") final String nombreZona) {
+        //TODO write your implementation code here:
+        return null;
+    }
+    
+    
 }
