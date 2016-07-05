@@ -5,13 +5,13 @@
 
   <xs:element name="enviarMensajeClienteResponse" nillable="true" type="tns:enviarMensajeClienteResponse"/>
 
-  <xs:element name="enviarMensajeClientes" type="tns:enviarMensajeClientes"/>
+  <xs:element name="enviarMensajeClientes" nillable="true" type="tns:enviarMensajeClientes"/>
 
-  <xs:element name="enviarMensajeClientesResponse" type="tns:enviarMensajeClientesResponse"/>
+  <xs:element name="enviarMensajeClientesResponse" nillable="true" type="tns:enviarMensajeClientesResponse"/>
 
-  <xs:element name="enviarMensajeZona" type="tns:enviarMensajeZona"/>
+  <xs:element name="enviarMensajeZona" nillable="true" type="tns:enviarMensajeZona"/>
 
-  <xs:element name="enviarMensajeZonaResponse" type="tns:enviarMensajeZonaResponse"/>
+  <xs:element name="enviarMensajeZonaResponse" nillable="true" type="tns:enviarMensajeZonaResponse"/>
 
   <xs:element name="getFechaVisitas" nillable="true" type="tns:getFechaVisitas"/>
 

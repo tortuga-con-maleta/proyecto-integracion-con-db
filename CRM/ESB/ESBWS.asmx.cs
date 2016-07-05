@@ -49,5 +49,21 @@ namespace ESB
             bool result = balizaWsClient.enviarMensajeCliente(idCliente, mensaje);
             return result;
         }
+        [WebMethod]
+        public bool enviarMensajeClientes(int?[] idClientes, string mensaje)
+        {
+            BalizaWSClient balizaWsClient = new BalizaWSClient();
+            
+            bool result = balizaWsClient.enviarMensajeClientes(idClientes, mensaje);
+            return result;
+        }
+        [WebMethod]
+        public bool enviarMensajeZona(int idZona, string mensaje)
+        {
+            BalizaWSClient balizaWsClient = new BalizaWSClient();
+
+            bool result = balizaWsClient.enviarMensajeZona(idZona, mensaje);
+            return result;
+        }
     }
 }

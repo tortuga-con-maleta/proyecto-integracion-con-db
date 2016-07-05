@@ -24,7 +24,7 @@
   </xs:complexType>
   <xs:complexType name="enviarMensajeZona">
     <xs:sequence>
-      <xs:element minOccurs="0" name="idZona" type="xs:int" />
+      <xs:element name="idZona" type="xs:int" />
       <xs:element minOccurs="0" name="mensaje" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

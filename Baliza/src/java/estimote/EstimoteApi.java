@@ -15,12 +15,12 @@ public class EstimoteApi {
         return true;
     }
     
-    public static boolean enviarMensajeClientes(Integer[] idClientes, String mensaje){
+    public static boolean enviarMensajeClientes(int[] idClientes, String mensaje){
         //CODIGO DUMMY
         return true;
     }
     
-    public static boolean enviarMensajeZona(Integer idZona, String mensaje){
+    public static boolean enviarMensajeZona(int idZona, String mensaje){
         //CODIGO DUMMY
         return true;
     }
