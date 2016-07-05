@@ -74,8 +74,26 @@ public class BalizaWS {
         System.out.println("El mensaje es " + mensaje);
         return result;
     }
-    
-    
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "enviarMensajeClientes")
+    public Boolean enviarMensajeClientes(@WebParam(name = "clienteIDs") final java.lang.Integer[] clienteIDs, @WebParam(name = "mensaje") final String mensaje) {
+        boolean result = EstimoteApi.enviarMensajeClientes(clienteIDs, mensaje);
+        System.out.println("El mensaje es " + mensaje);
+        return result;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "enviarMensajeZona")
+    public Boolean enviarMensajeZona(@WebParam(name = "idZona") final Integer idZona, @WebParam(name = "mensaje") final String mensaje) {
+        boolean result = EstimoteApi.enviarMensajeZona(idZona, mensaje);
+        return result;
+    }
+
     
     
 }

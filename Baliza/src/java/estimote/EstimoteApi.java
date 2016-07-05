@@ -14,4 +14,14 @@ public class EstimoteApi {
         //CODIGO DUMMY
         return true;
     }
+    
+    public static boolean enviarMensajeClientes(Integer[] idClientes, String mensaje){
+        //CODIGO DUMMY
+        return true;
+    }
+    
+    public static boolean enviarMensajeZona(Integer idZona, String mensaje){
+        //CODIGO DUMMY
+        return true;
+    }
 }
