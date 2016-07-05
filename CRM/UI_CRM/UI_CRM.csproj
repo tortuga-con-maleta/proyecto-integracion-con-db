@@ -65,12 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CrudPromocion.aspx" />
-    <Content Include="Service References\ESB_WS\configuration91.svcinfo" />
-    <Content Include="Service References\ESB_WS\configuration.svcinfo" />
-    <Content Include="Service References\ESB_WS\Reference.svcmap">
+    <None Include="Service References\ESB_WS\configuration91.svcinfo" />
+    <None Include="Service References\ESB_WS\configuration.svcinfo" />
+    <None Include="Service References\ESB_WS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -134,7 +134,7 @@
       <DependentUpon>CRM_MODEL.edmx</DependentUpon>
       <LastGenOutput>CRM_MODEL.cs</LastGenOutput>
     </Content>
-    <Content Include="Service References\ESB_WS\ESBWS.wsdl" />
+    <None Include="Service References\ESB_WS\ESBWS.wsdl" />
     <Content Include="Service References\ESB_WS\UI_CRM.ESB_WS.ArrayOfString.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -148,6 +148,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ESB_WS\UI_CRM.ESB_WS.insertarZonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ESB_WS\UI_CRM.ESB_WS.enviarMensajeClientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ESB_WS\UI_CRM.ESB_WS.enviarMensajeZonaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">

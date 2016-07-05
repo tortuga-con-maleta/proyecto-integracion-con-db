@@ -74,6 +74,12 @@
     <Content Include="Service References\BalizaWs\ESB.BalizaWs.insertarZonaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\BalizaWs\ESB.BalizaWs.enviarMensajeClientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\BalizaWs\ESB.BalizaWs.enviarMensajeZonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\BalizaWs\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

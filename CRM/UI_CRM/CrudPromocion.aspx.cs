@@ -85,6 +85,46 @@ namespace UI_CRM
             System.Console.WriteLine("enviarMensajeCliente fin");
         }
 
+        protected void btn_enviarMensajeClientes_Click(object sender, EventArgs e)
+        {
+            UI_CRM.ESB_WS.ArrayOfInt idClientes = new ArrayOfInt();
+            idClientes[0] = int.Parse(txt_idClientes1.Text);
+            idClientes[1] = int.Parse(txt_idClientes2.Text);
+            idClientes[2] = int.Parse(txt_idClientes3.Text);
+            ESBWSSoapClient esbWSSoapClient = new ESBWSSoapClient();
+            string mensajeCliente = txt_mensajeClientes.Text;
+            bool insercionTuvoExito = esbWSSoapClient.enviarMensajeClientes(idClientes, mensajeCliente);
+            string mensaje = String.Empty;
+            if (insercionTuvoExito)
+            {
+                mensaje = "Mensaje a clientes tuvo éxito";
+            }
+            else
+            {
+                mensaje = "Mensaje a clientes no tuvo éxito";
+            }
+            lbl_mensaje.Text = mensaje;
+        }
+
+        protected void btn_enviarMensajeZona_Click(object sender, EventArgs e)
+        {
+            int idZona = int.Parse(txt_idZona.Text);
+            string mensajeZona = txt_mensajeZona.Text;
+            ESBWSSoapClient esbWSSoapClient = new ESBWSSoapClient();
+            bool insercionTuvoExito = esbWSSoapClient.enviarMensajeZona(idZona, mensajeZona);
+            string mensaje = String.Empty;
+            if (insercionTuvoExito)
+            {
+                mensaje = "Mensaje a zona tuvo éxito";
+            }
+            else
+            {
+                mensaje = "Mensaje a zona no tuvo éxito";
+            }
+            lbl_mensaje.Text = mensaje;
+        }
+
+
         
 
 

@@ -60,6 +60,41 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="enviarMensajeClientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idClientes" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="enviarMensajeClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="enviarMensajeClientesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="enviarMensajeZona">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idZona" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="enviarMensajeZonaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="enviarMensajeZonaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="getVisitasSoapIn">
@@ -86,6 +121,18 @@
   <wsdl:message name="enviarMensajeClienteSoapOut">
     <wsdl:part name="parameters" element="tns:enviarMensajeClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="enviarMensajeClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:enviarMensajeClientes" />
+  </wsdl:message>
+  <wsdl:message name="enviarMensajeClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:enviarMensajeClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="enviarMensajeZonaSoapIn">
+    <wsdl:part name="parameters" element="tns:enviarMensajeZona" />
+  </wsdl:message>
+  <wsdl:message name="enviarMensajeZonaSoapOut">
+    <wsdl:part name="parameters" element="tns:enviarMensajeZonaResponse" />
+  </wsdl:message>
   <wsdl:portType name="ESBWSSoap">
     <wsdl:operation name="getVisitas">
       <wsdl:input message="tns:getVisitasSoapIn" />
@@ -102,6 +149,14 @@
     <wsdl:operation name="enviarMensajeCliente">
       <wsdl:input message="tns:enviarMensajeClienteSoapIn" />
       <wsdl:output message="tns:enviarMensajeClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensajeClientes">
+      <wsdl:input message="tns:enviarMensajeClientesSoapIn" />
+      <wsdl:output message="tns:enviarMensajeClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensajeZona">
+      <wsdl:input message="tns:enviarMensajeZonaSoapIn" />
+      <wsdl:output message="tns:enviarMensajeZonaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ESBWSSoap" type="tns:ESBWSSoap">
@@ -142,6 +197,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="enviarMensajeClientes">
+      <soap:operation soapAction="http://tempuri.org/enviarMensajeClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensajeZona">
+      <soap:operation soapAction="http://tempuri.org/enviarMensajeZona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ESBWSSoap12" type="tns:ESBWSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -174,6 +247,24 @@
     </wsdl:operation>
     <wsdl:operation name="enviarMensajeCliente">
       <soap12:operation soapAction="http://tempuri.org/enviarMensajeCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensajeClientes">
+      <soap12:operation soapAction="http://tempuri.org/enviarMensajeClientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensajeZona">
+      <soap12:operation soapAction="http://tempuri.org/enviarMensajeZona" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

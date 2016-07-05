@@ -20,6 +20,13 @@ namespace UI_CRM.ESB_WS {
     public class ArrayOfString : System.Collections.Generic.List<string> {
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfInt", Namespace="http://tempuri.org/", ItemName="int")]
+    [System.SerializableAttribute()]
+    public class ArrayOfInt : System.Collections.Generic.List<System.Nullable<int>> {
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ESB_WS.ESBWSSoap")]
     public interface ESBWSSoap {
@@ -51,6 +58,20 @@ namespace UI_CRM.ESB_WS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/enviarMensajeCliente", ReplyAction="*")]
         System.Threading.Tasks.Task<UI_CRM.ESB_WS.enviarMensajeClienteResponse> enviarMensajeClienteAsync(UI_CRM.ESB_WS.enviarMensajeClienteRequest request);
+        
+        // CODEGEN: Generating message contract since element name idClientes from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/enviarMensajeClientes", ReplyAction="*")]
+        UI_CRM.ESB_WS.enviarMensajeClientesResponse enviarMensajeClientes(UI_CRM.ESB_WS.enviarMensajeClientesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/enviarMensajeClientes", ReplyAction="*")]
+        System.Threading.Tasks.Task<UI_CRM.ESB_WS.enviarMensajeClientesResponse> enviarMensajeClientesAsync(UI_CRM.ESB_WS.enviarMensajeClientesRequest request);
+        
+        // CODEGEN: Generating message contract since element name mensaje from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/enviarMensajeZona", ReplyAction="*")]
+        UI_CRM.ESB_WS.enviarMensajeZonaResponse enviarMensajeZona(UI_CRM.ESB_WS.enviarMensajeZonaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/enviarMensajeZona", ReplyAction="*")]
+        System.Threading.Tasks.Task<UI_CRM.ESB_WS.enviarMensajeZonaResponse> enviarMensajeZonaAsync(UI_CRM.ESB_WS.enviarMensajeZonaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -322,6 +343,150 @@ namespace UI_CRM.ESB_WS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class enviarMensajeClientesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="enviarMensajeClientes", Namespace="http://tempuri.org/", Order=0)]
+        public UI_CRM.ESB_WS.enviarMensajeClientesRequestBody Body;
+        
+        public enviarMensajeClientesRequest() {
+        }
+        
+        public enviarMensajeClientesRequest(UI_CRM.ESB_WS.enviarMensajeClientesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class enviarMensajeClientesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public UI_CRM.ESB_WS.ArrayOfInt idClientes;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string mensaje;
+        
+        public enviarMensajeClientesRequestBody() {
+        }
+        
+        public enviarMensajeClientesRequestBody(UI_CRM.ESB_WS.ArrayOfInt idClientes, string mensaje) {
+            this.idClientes = idClientes;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class enviarMensajeClientesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="enviarMensajeClientesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public UI_CRM.ESB_WS.enviarMensajeClientesResponseBody Body;
+        
+        public enviarMensajeClientesResponse() {
+        }
+        
+        public enviarMensajeClientesResponse(UI_CRM.ESB_WS.enviarMensajeClientesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class enviarMensajeClientesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool enviarMensajeClientesResult;
+        
+        public enviarMensajeClientesResponseBody() {
+        }
+        
+        public enviarMensajeClientesResponseBody(bool enviarMensajeClientesResult) {
+            this.enviarMensajeClientesResult = enviarMensajeClientesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class enviarMensajeZonaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="enviarMensajeZona", Namespace="http://tempuri.org/", Order=0)]
+        public UI_CRM.ESB_WS.enviarMensajeZonaRequestBody Body;
+        
+        public enviarMensajeZonaRequest() {
+        }
+        
+        public enviarMensajeZonaRequest(UI_CRM.ESB_WS.enviarMensajeZonaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class enviarMensajeZonaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idZona;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string mensaje;
+        
+        public enviarMensajeZonaRequestBody() {
+        }
+        
+        public enviarMensajeZonaRequestBody(int idZona, string mensaje) {
+            this.idZona = idZona;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class enviarMensajeZonaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="enviarMensajeZonaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public UI_CRM.ESB_WS.enviarMensajeZonaResponseBody Body;
+        
+        public enviarMensajeZonaResponse() {
+        }
+        
+        public enviarMensajeZonaResponse(UI_CRM.ESB_WS.enviarMensajeZonaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class enviarMensajeZonaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool enviarMensajeZonaResult;
+        
+        public enviarMensajeZonaResponseBody() {
+        }
+        
+        public enviarMensajeZonaResponseBody(bool enviarMensajeZonaResult) {
+            this.enviarMensajeZonaResult = enviarMensajeZonaResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ESBWSSoapChannel : UI_CRM.ESB_WS.ESBWSSoap, System.ServiceModel.IClientChannel {
     }
@@ -447,6 +612,60 @@ namespace UI_CRM.ESB_WS {
             inValue.Body.idCliente = idCliente;
             inValue.Body.mensaje = mensaje;
             return ((UI_CRM.ESB_WS.ESBWSSoap)(this)).enviarMensajeClienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UI_CRM.ESB_WS.enviarMensajeClientesResponse UI_CRM.ESB_WS.ESBWSSoap.enviarMensajeClientes(UI_CRM.ESB_WS.enviarMensajeClientesRequest request) {
+            return base.Channel.enviarMensajeClientes(request);
+        }
+        
+        public bool enviarMensajeClientes(UI_CRM.ESB_WS.ArrayOfInt idClientes, string mensaje) {
+            UI_CRM.ESB_WS.enviarMensajeClientesRequest inValue = new UI_CRM.ESB_WS.enviarMensajeClientesRequest();
+            inValue.Body = new UI_CRM.ESB_WS.enviarMensajeClientesRequestBody();
+            inValue.Body.idClientes = idClientes;
+            inValue.Body.mensaje = mensaje;
+            UI_CRM.ESB_WS.enviarMensajeClientesResponse retVal = ((UI_CRM.ESB_WS.ESBWSSoap)(this)).enviarMensajeClientes(inValue);
+            return retVal.Body.enviarMensajeClientesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UI_CRM.ESB_WS.enviarMensajeClientesResponse> UI_CRM.ESB_WS.ESBWSSoap.enviarMensajeClientesAsync(UI_CRM.ESB_WS.enviarMensajeClientesRequest request) {
+            return base.Channel.enviarMensajeClientesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UI_CRM.ESB_WS.enviarMensajeClientesResponse> enviarMensajeClientesAsync(UI_CRM.ESB_WS.ArrayOfInt idClientes, string mensaje) {
+            UI_CRM.ESB_WS.enviarMensajeClientesRequest inValue = new UI_CRM.ESB_WS.enviarMensajeClientesRequest();
+            inValue.Body = new UI_CRM.ESB_WS.enviarMensajeClientesRequestBody();
+            inValue.Body.idClientes = idClientes;
+            inValue.Body.mensaje = mensaje;
+            return ((UI_CRM.ESB_WS.ESBWSSoap)(this)).enviarMensajeClientesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        UI_CRM.ESB_WS.enviarMensajeZonaResponse UI_CRM.ESB_WS.ESBWSSoap.enviarMensajeZona(UI_CRM.ESB_WS.enviarMensajeZonaRequest request) {
+            return base.Channel.enviarMensajeZona(request);
+        }
+        
+        public bool enviarMensajeZona(int idZona, string mensaje) {
+            UI_CRM.ESB_WS.enviarMensajeZonaRequest inValue = new UI_CRM.ESB_WS.enviarMensajeZonaRequest();
+            inValue.Body = new UI_CRM.ESB_WS.enviarMensajeZonaRequestBody();
+            inValue.Body.idZona = idZona;
+            inValue.Body.mensaje = mensaje;
+            UI_CRM.ESB_WS.enviarMensajeZonaResponse retVal = ((UI_CRM.ESB_WS.ESBWSSoap)(this)).enviarMensajeZona(inValue);
+            return retVal.Body.enviarMensajeZonaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<UI_CRM.ESB_WS.enviarMensajeZonaResponse> UI_CRM.ESB_WS.ESBWSSoap.enviarMensajeZonaAsync(UI_CRM.ESB_WS.enviarMensajeZonaRequest request) {
+            return base.Channel.enviarMensajeZonaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<UI_CRM.ESB_WS.enviarMensajeZonaResponse> enviarMensajeZonaAsync(int idZona, string mensaje) {
+            UI_CRM.ESB_WS.enviarMensajeZonaRequest inValue = new UI_CRM.ESB_WS.enviarMensajeZonaRequest();
+            inValue.Body = new UI_CRM.ESB_WS.enviarMensajeZonaRequestBody();
+            inValue.Body.idZona = idZona;
+            inValue.Body.mensaje = mensaje;
+            return ((UI_CRM.ESB_WS.ESBWSSoap)(this)).enviarMensajeZonaAsync(inValue);
         }
     }
 }

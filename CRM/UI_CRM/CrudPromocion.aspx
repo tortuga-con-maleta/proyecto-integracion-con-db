@@ -76,6 +76,16 @@
                 <asp:TextBox ID="txt_idCliente2" runat="server" TextMode="Number"></asp:TextBox>
                 mensajeCliente:<asp:TextBox ID="txt_mensajeCliente" runat="server"></asp:TextBox>
                 <br />
+                <asp:Button ID="btn_enviarMensajeClientes" runat="server" OnClick="btn_enviarMensajeClientes_Click" Text="enviarMensajeClientes" />
+                idCliente1<asp:TextBox ID="txt_idClientes1" runat="server" TextMode="Number"></asp:TextBox>
+                idCliente2<asp:TextBox ID="txt_idClientes2" runat="server" TextMode="Number"></asp:TextBox>
+                idCliente3<asp:TextBox ID="txt_idClientes3" runat="server" TextMode="Number"></asp:TextBox>
+                mensajeClientes<asp:TextBox ID="txt_mensajeClientes" runat="server"></asp:TextBox>
+                <br />
+                <asp:Button ID="btn_enviarMensajeZona" runat="server" OnClick="btn_enviarMensajeZona_Click" Text="enviarMensajeZona" />
+                idZona<asp:TextBox ID="txt_idZona" runat="server" TextMode="Number"></asp:TextBox>
+                mensajeZona<asp:TextBox ID="txt_mensajeZona" runat="server"></asp:TextBox>
+                <br />
                 <br />
                 <br />
             </ContentTemplate>
