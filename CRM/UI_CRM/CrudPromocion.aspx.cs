@@ -88,9 +88,9 @@ namespace UI_CRM
         protected void btn_enviarMensajeClientes_Click(object sender, EventArgs e)
         {
             UI_CRM.ESB_WS.ArrayOfInt idClientes = new ArrayOfInt();
-            idClientes[0] = int.Parse(txt_idClientes1.Text);
-            idClientes[1] = int.Parse(txt_idClientes2.Text);
-            idClientes[2] = int.Parse(txt_idClientes3.Text);
+            idClientes.Add(int.Parse(txt_idClientes1.Text));
+            idClientes.Add(int.Parse(txt_idClientes2.Text));
+            idClientes.Add(int.Parse(txt_idClientes3.Text));
             ESBWSSoapClient esbWSSoapClient = new ESBWSSoapClient();
             string mensajeCliente = txt_mensajeClientes.Text;
             bool insercionTuvoExito = esbWSSoapClient.enviarMensajeClientes(idClientes, mensajeCliente);
