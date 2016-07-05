@@ -29,6 +29,18 @@
   <message name="enviarMensajeClienteResponse">
     <part name="parameters" element="tns:enviarMensajeClienteResponse" />
   </message>
+  <message name="enviarMensajeClientes">
+    <part name="parameters" element="tns:enviarMensajeClientes" />
+  </message>
+  <message name="enviarMensajeClientesResponse">
+    <part name="parameters" element="tns:enviarMensajeClientesResponse" />
+  </message>
+  <message name="enviarMensajeZona">
+    <part name="parameters" element="tns:enviarMensajeZona" />
+  </message>
+  <message name="enviarMensajeZonaResponse">
+    <part name="parameters" element="tns:enviarMensajeZonaResponse" />
+  </message>
   <portType name="BalizaWS">
     <operation name="insertarZona">
       <input wsam:Action="http://ws/BalizaWS/insertarZonaRequest" message="tns:insertarZona" />
@@ -45,6 +57,14 @@
     <operation name="enviarMensajeCliente">
       <input wsam:Action="http://ws/BalizaWS/enviarMensajeClienteRequest" message="tns:enviarMensajeCliente" />
       <output wsam:Action="http://ws/BalizaWS/enviarMensajeClienteResponse" message="tns:enviarMensajeClienteResponse" />
+    </operation>
+    <operation name="enviarMensajeClientes">
+      <input wsam:Action="http://ws/BalizaWS/enviarMensajeClientesRequest" message="tns:enviarMensajeClientes" />
+      <output wsam:Action="http://ws/BalizaWS/enviarMensajeClientesResponse" message="tns:enviarMensajeClientesResponse" />
+    </operation>
+    <operation name="enviarMensajeZona">
+      <input wsam:Action="http://ws/BalizaWS/enviarMensajeZonaRequest" message="tns:enviarMensajeZona" />
+      <output wsam:Action="http://ws/BalizaWS/enviarMensajeZonaResponse" message="tns:enviarMensajeZonaResponse" />
     </operation>
   </portType>
   <binding name="BalizaWSPortBinding" type="tns:BalizaWS">
@@ -77,6 +97,24 @@
       </output>
     </operation>
     <operation name="enviarMensajeCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="enviarMensajeClientes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="enviarMensajeZona">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -50,6 +50,24 @@ namespace ESB.BalizaWs {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/enviarMensajeClienteRequest", ReplyAction="http://ws/BalizaWS/enviarMensajeClienteResponse")]
         System.Threading.Tasks.Task<ESB.BalizaWs.enviarMensajeClienteResponse> enviarMensajeClienteAsync(ESB.BalizaWs.enviarMensajeClienteRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/enviarMensajeClientesRequest", ReplyAction="http://ws/BalizaWS/enviarMensajeClientesResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ESB.BalizaWs.enviarMensajeClientesResponse enviarMensajeClientes(ESB.BalizaWs.enviarMensajeClientesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/enviarMensajeClientesRequest", ReplyAction="http://ws/BalizaWS/enviarMensajeClientesResponse")]
+        System.Threading.Tasks.Task<ESB.BalizaWs.enviarMensajeClientesResponse> enviarMensajeClientesAsync(ESB.BalizaWs.enviarMensajeClientesRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/enviarMensajeZonaRequest", ReplyAction="http://ws/BalizaWS/enviarMensajeZonaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ESB.BalizaWs.enviarMensajeZonaResponse enviarMensajeZona(ESB.BalizaWs.enviarMensajeZonaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/BalizaWS/enviarMensajeZonaRequest", ReplyAction="http://ws/BalizaWS/enviarMensajeZonaResponse")]
+        System.Threading.Tasks.Task<ESB.BalizaWs.enviarMensajeZonaResponse> enviarMensajeZonaAsync(ESB.BalizaWs.enviarMensajeZonaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -193,6 +211,88 @@ namespace ESB.BalizaWs {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="enviarMensajeClientes", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class enviarMensajeClientesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("clienteIDs", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public System.Nullable<int>[] clienteIDs;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string mensaje;
+        
+        public enviarMensajeClientesRequest() {
+        }
+        
+        public enviarMensajeClientesRequest(System.Nullable<int>[] clienteIDs, string mensaje) {
+            this.clienteIDs = clienteIDs;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="enviarMensajeClientesResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class enviarMensajeClientesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public enviarMensajeClientesResponse() {
+        }
+        
+        public enviarMensajeClientesResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="enviarMensajeZona", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class enviarMensajeZonaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idZona;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string mensaje;
+        
+        public enviarMensajeZonaRequest() {
+        }
+        
+        public enviarMensajeZonaRequest(int idZona, string mensaje) {
+            this.idZona = idZona;
+            this.mensaje = mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="enviarMensajeZonaResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class enviarMensajeZonaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public enviarMensajeZonaResponse() {
+        }
+        
+        public enviarMensajeZonaResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface BalizaWSChannel : ESB.BalizaWs.BalizaWS, System.ServiceModel.IClientChannel {
     }
@@ -310,6 +410,56 @@ namespace ESB.BalizaWs {
             inValue.idCliente = idCliente;
             inValue.mensaje = mensaje;
             return ((ESB.BalizaWs.BalizaWS)(this)).enviarMensajeClienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ESB.BalizaWs.enviarMensajeClientesResponse ESB.BalizaWs.BalizaWS.enviarMensajeClientes(ESB.BalizaWs.enviarMensajeClientesRequest request) {
+            return base.Channel.enviarMensajeClientes(request);
+        }
+        
+        public bool enviarMensajeClientes(System.Nullable<int>[] clienteIDs, string mensaje) {
+            ESB.BalizaWs.enviarMensajeClientesRequest inValue = new ESB.BalizaWs.enviarMensajeClientesRequest();
+            inValue.clienteIDs = clienteIDs;
+            inValue.mensaje = mensaje;
+            ESB.BalizaWs.enviarMensajeClientesResponse retVal = ((ESB.BalizaWs.BalizaWS)(this)).enviarMensajeClientes(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ESB.BalizaWs.enviarMensajeClientesResponse> ESB.BalizaWs.BalizaWS.enviarMensajeClientesAsync(ESB.BalizaWs.enviarMensajeClientesRequest request) {
+            return base.Channel.enviarMensajeClientesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ESB.BalizaWs.enviarMensajeClientesResponse> enviarMensajeClientesAsync(System.Nullable<int>[] clienteIDs, string mensaje) {
+            ESB.BalizaWs.enviarMensajeClientesRequest inValue = new ESB.BalizaWs.enviarMensajeClientesRequest();
+            inValue.clienteIDs = clienteIDs;
+            inValue.mensaje = mensaje;
+            return ((ESB.BalizaWs.BalizaWS)(this)).enviarMensajeClientesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ESB.BalizaWs.enviarMensajeZonaResponse ESB.BalizaWs.BalizaWS.enviarMensajeZona(ESB.BalizaWs.enviarMensajeZonaRequest request) {
+            return base.Channel.enviarMensajeZona(request);
+        }
+        
+        public bool enviarMensajeZona(int idZona, string mensaje) {
+            ESB.BalizaWs.enviarMensajeZonaRequest inValue = new ESB.BalizaWs.enviarMensajeZonaRequest();
+            inValue.idZona = idZona;
+            inValue.mensaje = mensaje;
+            ESB.BalizaWs.enviarMensajeZonaResponse retVal = ((ESB.BalizaWs.BalizaWS)(this)).enviarMensajeZona(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ESB.BalizaWs.enviarMensajeZonaResponse> ESB.BalizaWs.BalizaWS.enviarMensajeZonaAsync(ESB.BalizaWs.enviarMensajeZonaRequest request) {
+            return base.Channel.enviarMensajeZonaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ESB.BalizaWs.enviarMensajeZonaResponse> enviarMensajeZonaAsync(int idZona, string mensaje) {
+            ESB.BalizaWs.enviarMensajeZonaRequest inValue = new ESB.BalizaWs.enviarMensajeZonaRequest();
+            inValue.idZona = idZona;
+            inValue.mensaje = mensaje;
+            return ((ESB.BalizaWs.BalizaWS)(this)).enviarMensajeZonaAsync(inValue);
         }
     }
 }
